@@ -673,8 +673,11 @@ redistribution_entry(NODE *node, NODE *brother_node, int parent_key, bool node_i
 void
 delete_entry_in_node(NODE *node, int key, bool node_is_predecessor)
 {
-	if(node->isLeaf)	delete_entry_in_leaf(node, key);
-	else	delete_entry_in_internal(node, key, node_is_predecessor);
+	if(node->isLeaf)	
+		delete_entry_in_leaf(node, key);
+	
+	else	
+		delete_entry_in_internal(node, key, node_is_predecessor);
 }
 
 
@@ -741,7 +744,7 @@ main(int argc, char *argv[])
 	int delete_number;
 	int delete_number_i;
 
-  std::vector<int> vec;
+  	std::vector<int> vec;
 	srand(10);
 
 	init_root();
@@ -750,8 +753,8 @@ main(int argc, char *argv[])
 	printf("-----Insert-----\n");
 
 	for (key = 1; key < DATA_NUMBER+1; key++) {
-    vec.push_back(rand()+1);
-  }
+    　　　　　　  vec.push_back(rand()+1);
+  	}
 
 	for(key = 0; key < DATA_NUMBER; key++){
 		insert(vec[key], NULL);
@@ -783,8 +786,8 @@ main(int argc, char *argv[])
 		insert(insert_number, NULL);
 		//print_tree(Root);
 
-  }
+  	}
 
-  return 0;
+  	return 0;
 
 }
